@@ -10,19 +10,22 @@ public String runLength(String str){
 		counter++;
 	
 	}
+	
 	if(str.charAt(i)!=(str.charAt(i+1))){
-		str1+=String.valueOf(counter) + String.valueOf(str.charAt(i));
+		str1+=String.valueOf(counter) + (str.charAt(i));
 		//str2 = String.valueOf(str1);
 		counter=1;
 					// counter+i?
 	}
-	
-}
-return str1;
+	}
+		str1+=String.valueOf(counter)+(str.charAt(str.length()-1));
+		return str1;
 }
 
-//public String runLengthChecker(String str1, String str2){
-//}
+public String runLengthChecker(String str1, String str2){
+	
+
+}
 public static void main (String[] args){
 	highSchool tester = new highSchool();
 	
