@@ -23,7 +23,10 @@ public String runLength(String str){
 }
 
 public String runLengthChecker(String str1, String str2){
-	
+	if(str2.equals(runLength(str1))){
+		return "true";
+	}
+	return runLength(str1);
 
 }
 public static void main (String[] args){
@@ -33,8 +36,9 @@ public static void main (String[] args){
 	
 	System.out.println(testOne);
 	
-	String testTwo = tester.runLength("aaaaBBBCCCCC");
+	String testTwo = tester.runLengthChecker("aaaaBBBCCCCC","4a3B5C");
 	
+	System.out.println(testTwo);
 }
 
 }
