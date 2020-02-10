@@ -1,3 +1,4 @@
+import javax.swing.*;
 class robertD{
 	
 	Moneys[] pocketChange;
@@ -37,9 +38,43 @@ class robertD{
 		return d;
 	}
 }
+class Window extends JFrame 
+{
+	JPanel pnl = new JPanel();
+	
+	
+	
+	JTextArea txtArea = new JTextArea( 5, 37 ) ;
+	JTextField txt1 = new JTextField( 38 ) ;
+	
+	JScrollPane pane = new JScrollPane( txtArea ) ;
+	
+	public Window()
+	{
+		super("robertD");
+		setSize( 500,200 );
+		setDefaultCloseOperation( EXIT_ON_CLOSE );
+		add(pnl);
+		
+		txtArea.setLineWrap( true ) ;
+		txtArea.setWrapStyleWord( true ) ;
+
+		pane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		
+		pnl.add( pane ) ;
+		
+		pnl.add( txt1 ) ;
+		
+		
+		
+		
+		setVisible( true );
+	}
+}
 
 class dinero{
 	public static void main(String... v){
+		Window gui = new Window();
 		robertD Duckets = new robertD();
 		int i; 
 		double sum=0;
@@ -76,7 +111,8 @@ class dinero{
 		}
 		
 		System.out.println("sum is $"+sum);
-		
+		gui.txtArea.setText(Duckets.getd(Duckets.pocketChange[i]));
+		gui.txt1.setText.valueOf(sum);
 		// give each of the coins a value
 		//for(robertD.Moneys coin: Duckets.pocketChange){ //might need different for loop
 			//System.out.println(Duckets.getValue(coin) );
